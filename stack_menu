@@ -59,8 +59,7 @@ int main() {
   menu();
   cout << "Enter choice: ";
   cin >> choice;
-  switch(choice)
-  {
+  switch(choice){
   	case 1:
   		cout << "Enter a number: ";
   		cin >> num;
