@@ -10,14 +10,14 @@ class Stack {
     }
     
   void push(int t) {
-  	cout << "Push "<<t<<": \n";
+  	cout << "Push : " << t << endl;
     if (top == maxelem) 
 		return;
     s[top++] = t;
   }
   
   int pop() {
-  	cout << "Pop: \n";
+  	cout << "Successfully removed!" << endl;
     if (top == 0) 
 		return -1;
     return s[--top];
