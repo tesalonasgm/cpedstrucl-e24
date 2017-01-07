@@ -1,5 +1,7 @@
+#include <iostream>
 #include<stdio.h> 
 #include<stdlib.h>
+using namespace std;
 
 struct node {
 	int data;
@@ -15,6 +17,18 @@ int count() {
     c++;
   }
   return c;
+}
+
+void search(int val) {
+  struct node * n;
+  int c = 1;
+  n = head;
+  while (n != NULL) {
+  if(val == n->data)
+  	cout << "\nFound " << n->data << "at position " << c << endl;
+ 	n = n-> next;
+ 	c++;
+	}
 }
 
 void append(int num) {
@@ -88,7 +102,7 @@ void insert(int num) {
     add(num);
   } else {
     while (temp != NULL) {
-      if (temp -> data < num)
+    //  if (temp -> data < num)
         c++;
       temp = temp -> next;
     }
@@ -126,7 +140,8 @@ int main() {
     printf("2.Display\n");
     printf("3.Size\n");
     printf("4.Delete\n");
-    printf("5.Exit\n");
+    printf("5.Search\n");
+    printf("6.Exit\n");
     printf("Enter your choice : ");
     if (scanf("%d", & i) <= 0) {
       printf("Enter only an Integer\n");
@@ -135,7 +150,7 @@ int main() {
       switch (i) {
       case 1:
         printf("Enter the number to insert : ");
-        scanf("%d", & num);
+        scanf("%d", &num);
         insert(num);
         break;
       case 2:
@@ -162,9 +177,14 @@ int main() {
         }
         break;
       case 5:
-        return 0;
+      	cout << "Enter number to search: ";
+      	cin >> num;
+        search(num);
+        break;
       default:
         printf("Invalid option\n");
+      case 6:
+      	return 0;
       }
     }
     
