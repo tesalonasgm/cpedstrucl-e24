@@ -3,7 +3,7 @@
 using namespace std;
 
 int main(){
-	int n = 5, i = 0, j = 0;
+	int n = 5, i = 0, j = 0, ctr = 1;
 	int array[] = {40, 30, 20, 50, 10};
 	
 	cout << "Original Array: ";
@@ -17,10 +17,11 @@ int main(){
 			array[j+1] = array[j];
 		}
 		array[j+1] = temp;
-		cout << "-- " << array[i] << " swapped with " << array[j+1]<< endl;
-		
+		cout << endl;
+		cout << "Pass " << ctr++ << ": ";		
 		for(int k = 0; k < 5; k++)
 			cout << array[k] << " ";
+		cout << " -> Swap " << "(" << array[i] << ", " << array[j+1] << ")";
 		cout << endl;
 	}
 	
