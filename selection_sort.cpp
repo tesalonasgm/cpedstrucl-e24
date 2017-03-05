@@ -3,10 +3,10 @@
 using namespace std;
 
 int main(){
-	int n = 5;
+	int n = 5, ctr = 1;
 	int array[] = {30, 40, 20, 50, 10};
 	
-	cout << "Original Array: ";
+	cout << "Array at beginning: ";
 	for(int x = 0; x < n; x++)
 		cout << array[x] << " ";
 	cout << endl << endl;
@@ -16,15 +16,20 @@ int main(){
 			if(array[j] < min){
 				min = array[j];
 				index = j;
-				cout << "-- " << array[j-1] << " swapped with " << array[j] << endl;
 			}
 		}
 		array[index] = array[i];
 		array[i] = min;
+		cout << endl;
+		cout << "Pass " << ctr++ << ": ";
 		for(int k = 0; k < 5; k++)
 			cout << array[k] << " ";
+		cout << " - ";
+		for(int j = i+1; j<n; j++)
+			cout << " Swapped " << "(" << array[j] << ", " << array[j-1] << ")";
 		cout << endl;
 	}
+	
 	
 	return 0;
 }
